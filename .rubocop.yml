@@ -8,5 +8,21 @@
 # where the inspected file is and continue its way up to the root directory.
 #
 # See https://docs.rubocop.org/rubocop/configuration
+require:
+  - rubocop-performance
+  - rubocop-md
+
 AllCops:
-  TargetRubyVersion: 2.7.5
+  NewCops: enable
+  TargetRubyVersion: 3.3
+  Exclude:
+    - spec/**/*
+
+Metrics:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

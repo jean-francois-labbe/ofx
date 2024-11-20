@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require "ofx"
-require "byebug"
 
 RSpec::Matchers.define :have_key do |key|
   match do |hash|
     hash.respond_to?(:keys) &&
-    hash.keys.kind_of?(Array) &&
-    hash.keys.include?(key)
+      hash.keys.is_a?(Array) &&
+      hash.keys.include?(key)
   end
 end
 
